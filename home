@@ -1,0 +1,86 @@
+import random
+
+rock = '''
+    _______
+---'   ____)
+      (_____)
+      (_____)
+      (____)
+---.__(___)
+'''
+
+paper = '''
+    _______
+---'   ____)____
+          ______)
+          _______)
+         _______)
+---.__________)
+'''
+
+scissors = '''
+    _______
+---'   ____)____
+          ______)
+       __________)
+      (____)
+---.__(___)
+'''
+
+
+
+choice_number = int(input("Which do you choose? Type 0 for Rock, 1 for Paper or 2 for Scissors: \n"))
+# print(choice_number)
+# Print tool they chose
+if choice_number == 0:
+  print(f"You selected rock\n {rock}")
+elif choice_number == 1:
+  print(f"You selected paper\n {paper}")  
+elif choice_number == 2:
+  print(f"You selected scissors\n {scissors}")  
+else:
+  print("Error! Your number is out of range. Pls follow the instruction and try again.")  
+# Ask computer to generate its own choice
+computer_choice = random.randint(0,2)
+print(computer_choice)
+if computer_choice == 0:
+  print(f"Computer selected rock\n {rock}")
+elif computer_choice == 1:
+  print(f"Computer selected paper\n {paper}")  
+elif computer_choice == 2:
+  print(f"Computer selected scissors\n {scissors}")  
+else:
+  print("Error!")
+# Compare user choice and computer rules
+# Rock and scissors
+if computer_choice == 0 and choice_number == 2:
+  print("Game over.You lost to the computer. Rock wins scissors and you choose scissors")
+
+if computer_choice == 2 and choice_number == 0:
+  print("You have won the computer. Congratulations!! Rock wins scissors and you choose Rock")
+
+  
+
+#Scissors and Paper 
+if computer_choice == 2 and choice_number == 1:
+    print("Game over.You lost to the computer. Scissors wins Paper and you choose Paper")
+
+
+if computer_choice == 1 and choice_number == 2:
+    print("You have won the computer. Congratulations!! Scissors wins Paper and you choose Scissors")
+
+# Paper and rock
+if computer_choice == 1 and choice_number == 0:
+    print("Game over.You lost to the computer. Paper wins Rock and you choose Rock")
+
+
+if computer_choice == 0 and choice_number == 1:
+    print("You have won the computer. Congratulations!! Paper wins Rock and you choose Paper")
+
+
+# Draw Game
+if computer_choice == choice_number:
+  print("This is a draw.None of you won!!")
+
+
+  
